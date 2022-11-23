@@ -20,26 +20,49 @@
         </div>
     </div>
 
-    <div id="animation" class="invisible mx-auto -my-52 border border-basecolor rounded-xl bg-gradient-to-br from-grad1 to-grad2 p-2 py-4 flex w-fit space-x-2 items-center">
-        <div class="text-white font-medium">You won 2 marbles this turn</div>
-        <img class="h-8 -mt-2" src="./Emoji.svg" alt="">
+    <div id="animations">
+        <!-- Animation 1 HTML -->
+        <div id="animation-one" class="invisible mx-auto -my-52 border border-basecolor rounded-xl bg-gradient-to-br from-grad1 to-grad2 p-2 py-4 flex w-fit space-x-2 items-center">
+            <div class="text-white font-medium">You won 2 marbles this turn</div>
+            <img class="h-8 -mt-2" src="./Emoji.svg" alt="">
+        </div>
+        <!-- Animation 2 HTML -->
+        <div id="animation-two" class="invisible mx-auto my-44 w-fit">
+            <div class="text-green text-5xl font-medium">+2</div>
+        </div>
     </div>
-
+    
+    
+    
+    <!-- Animation buttons -->
     <div class="my-80 mx-auto w-fit">
-        <button id="do-animation" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation</button>
+        <button id="do-animation-one" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation 1</button>
+        <button id="do-animation-two" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation 2</button>
     </div>
-
+    
+    <!-- Animation 1 JS -->
     <script>
-        const animation = document.getElementById('animation')
-        const doAnimation = document.getElementById('do-animation')
-        doAnimation.addEventListener('click', () => {
-            animation.classList.add('invisible')
-            animation.classList.remove('animate-bot-to-bot')
-            animation.classList.remove('invisible')
-            animation.classList.add('animate-bot-to-bot')
+        const animationOne = document.getElementById('animation-one')
+        const doAnimationOne = document.getElementById('do-animation-one')
+        doAnimationOne.addEventListener('click', () => {
+            animationOne.classList.remove('invisible')
+            animationOne.classList.add('animate-bot-to-bot')
             setTimeout(() => {
-                animation.classList.remove('animate-bot-to-bot')
-                animation.classList.add('invisible')
+                animationOne.classList.remove('animate-bot-to-bot')
+                animationOne.classList.add('invisible')
+            }, "4000")
+        })
+    </script>
+    <!-- Animation 2 JS -->
+    <script>
+        const animationTwo = document.getElementById('animation-two')
+        const doAnimationTwo = document.getElementById('do-animation-two')
+        doAnimationTwo.addEventListener('click', () => {
+            animationTwo.classList.remove('invisible')
+            animationTwo.classList.add('animate-small-to-big')
+            setTimeout(() => {
+                animationTwo.classList.remove('animate-small-to-big')
+                animationTwo.classList.add('invisible')
             }, "4000")
         })
     </script>

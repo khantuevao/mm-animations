@@ -532,6 +532,11 @@ video {
   margin-bottom: -13rem;
 }
 
+.my-44 {
+  margin-top: 11rem;
+  margin-bottom: 11rem;
+}
+
 .my-80 {
   margin-top: 20rem;
   margin-bottom: 20rem;
@@ -568,7 +573,7 @@ video {
 
 @keyframes botToBot {
   0% {
-    transform: translateY(5rem);
+    transform: translateY(4rem);
     opacity: 0;
   }
 
@@ -583,13 +588,49 @@ video {
   }
 
   100% {
-    transform: translateY(5rem);
+    transform: translateY(4rem);
     opacity: 0;
   }
 }
 
 .animate-bot-to-bot {
   animation: botToBot 4s ease-in-out infinite;
+}
+
+@keyframes smallToBig {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  15% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  85% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-small-to-big {
+  animation: smallToBig 4s ease-in-out infinite;
 }
 
 .flex-col {
@@ -693,6 +734,11 @@ video {
   line-height: 2rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -710,6 +756,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(132 204 22 / var(--tw-text-opacity));
 }
 
 .hover\:bg-white:hover {
