@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="./mm.js"></script>
+    <title>mm-animations</title>
+</head>
+<body>
+    <style>body {background-color:#1C2258}</style>
+    
+    <div class="my-56 p-2 px-6 w-fit mx-auto bg-transparent rounded-xl flex items-center space-x-4">
+        <div class="flex w-20 h-20 overflow-hidden rounded-full">
+            <img class="object-cover" src="../img/avatar.jpeg" alt="MagicMarble Logo">
+        </div>
+        <div class="flex flex-col h-20 justify-around">
+            <div class="text-3xl font-medium text-basecolor">Playerplayer</div>
+            <div class="text-2xl font-medium text-hider">Hider</div>
+        </div>
+    </div>
+
+    <div id="animation" class="invisible mx-auto -my-52 border border-basecolor rounded-xl bg-gradient-to-br from-grad1 to-grad2 p-2 py-4 flex w-fit space-x-4 items-center">
+        <div class="text-white font-medium">You won 2 marbles this turn</div>
+        <img class="h-10 -mt-2" src="../img/Emoji.svg" alt="">
+    </div>
+
+    <div class="my-80 mx-auto w-fit">
+        <button id="do-animation" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation</button>
+    </div>
+
+    <script>
+        const animation = document.getElementById('animation')
+        const doAnimation = document.getElementById('do-animation')
+        doAnimation.addEventListener('click', () => {
+            animation.classList.remove('invisible')
+            animation.classList.add('animate-bot-to-bot')
+            setTimeout(() => {
+                animation.classList.remove('animate-bot-to-bot')
+                animation.classList.add('invisible')
+            }, "6000")
+        })
+    </script>
+</body>
+</html>
