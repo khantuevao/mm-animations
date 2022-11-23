@@ -589,7 +589,7 @@ video {
 }
 
 .animate-bot-to-bot {
-  animation: botToBot 6s ease-in-out infinite;
+  animation: botToBot 4s ease-in-out infinite;
 }
 
 .flex-col {

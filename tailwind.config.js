@@ -30,7 +30,7 @@ module.exports = {
         },
       },
       animation: {
-        'bot-to-bot': 'botToBot 6s ease-in-out infinite',
+        'bot-to-bot': 'botToBot 4s ease-in-out infinite',
       },
     },
   },
