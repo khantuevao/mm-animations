@@ -37,10 +37,27 @@ module.exports = {
           '85%': { transform: 'scale(1.2)', opacity: '1' },
           '100%': { transform: 'scale(0)', opacity: '0' },
         },
+        topToBot: {
+          '0%': { transform: 'translate(-50%, -100%)' },
+          '100%': { transform: 'translate(-50%, -50%)' },
+        },
+        confettiSlow: {
+          '0%': { transform: 'translate3d(0, 0, 0) rotateX(0) rotateY(0)' },
+          '100%': { transform: 'translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg)' }
+        },
+        confettiMedium: {
+          '0%': { transform: 'translate3d(0, 0, 0) rotateX(0) rotateY(0)' },
+          '100%': { transform: 'translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg)' }
+        },
+        confettiFast: {
+          '0%': { transform: 'translate3d(0, 0, 0) rotateX(0) rotateY(0)' },
+          '100%': { transform: 'translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg)' }
+        },
       },
       animation: {
         'bot-to-bot': 'botToBot 4s ease-in-out infinite',
         'small-to-big': 'smallToBig 4s ease-in-out infinite',
+        'top-to-bot': 'topToBot 0.5s ease-in-out'
       },
     },
   },
