@@ -1,70 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #1c2258;
+        border: 1px solid rgba(255, 255, 255, 0);
+        min-height: 100vh;
+      }
+    </style>
     <title>mm-animations</title>
-</head>
-<body>
-    <style>body {background-color:#1C2258}</style>
-    
-    <div class="my-56 p-2 px-6 w-fit mx-auto bg-transparent rounded-xl flex items-center space-x-4">
+  </head>
+  <body>
+    <!-- Main container -->
+    <div id="main-container">
+      <div
+        class="my-56 p-2 px-6 w-fit mx-auto bg-transparent rounded-xl flex items-center space-x-4"
+      >
         <div class="flex w-20 h-20 overflow-hidden rounded-full">
-            <img class="object-cover" src="./avatar.jpeg" alt="MagicMarble Logo">
+          <img
+            class="object-cover"
+            src="./avatar.jpeg"
+            alt="MagicMarble Logo"
+          />
         </div>
         <div class="flex flex-col h-20 justify-around">
-            <div class="text-3xl font-medium text-basecolor">Playerplayer</div>
-            <div class="text-2xl font-medium text-hider">Hider</div>
+          <div class="text-3xl font-medium text-basecolor">Playerplayer</div>
+          <div class="text-2xl font-medium text-hider">Hider</div>
         </div>
-    </div>
-
-    <div id="animations">
+      </div>
+      <div id="animations">
         <!-- Animation 1 HTML -->
-        <div id="animation-one" class="invisible mx-auto -my-52 border border-basecolor rounded-xl bg-gradient-to-br from-grad1 to-grad2 p-2 py-4 flex w-fit space-x-2 items-center">
-            <div class="text-white font-medium">You won 2 marbles this turn</div>
-            <img class="h-8 -mt-2" src="./Emoji.svg" alt="">
+        <div
+          id="animation-one"
+          class="invisible mx-auto -my-52 border border-basecolor rounded-xl bg-gradient-to-br from-grad1 to-grad2 p-2 py-4 flex w-fit space-x-2 items-center"
+        >
+          <div class="text-white font-medium">You won 2 marbles this turn</div>
+          <img class="h-8 -mt-2" src="./Emoji.svg" alt="" />
         </div>
         <!-- Animation 2 HTML -->
         <div id="animation-two" class="invisible mx-auto my-44 w-fit">
-            <div class="text-green text-5xl font-medium">+2</div>
+          <div class="text-green text-5xl font-medium">+2</div>
         </div>
+      </div>
+
+      <!-- Animation buttons -->
+      <div class="my-48 mx-auto w-fit">
+        <a
+          id="do-animation-one"
+          href="#"
+          onclick="doAnimationOne()"
+          class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5 cursor-pointer"
+          >Do animation 1</a
+        >
+        <a
+          id="do-animation-two"
+          href="#"
+          onclick="doAnimationTwo()"
+          class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5 cursor-pointer"
+          >Do animation 2</a
+        >
+        <a
+          id="do-animation-three"
+          href="#"
+          onclick="doAnimationThree()"
+          class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5 cursor-pointer"
+          >Do animation 3</a
+        >
+      </div>
     </div>
-    
-    
-    
-    <!-- Animation buttons -->
-    <div class="my-48 mx-auto w-fit">
-        <button id="do-animation-one" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation 1</button>
-        <button id="do-animation-two" class="text-white border-white border rounded-xl p-1 bh-transparent hover:bg-white hover:text-basebg transform active:translate-y-0.5">Do animation 2</button>
+
+    <!-- Animation 3 HTML -->
+    <div
+      id="popup-win"
+      class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-basecolor rounded-xl px-24 py-12 bg-grad2/30"
+    >
+      <p class="text-4xl font-medium text-center text-basecolor">
+        Congratulations, you Won!
+      </p>
     </div>
-    
+
     <!-- Animation 1 JS -->
     <script>
-        const animationOne = document.getElementById('animation-one')
-        const doAnimationOne = document.getElementById('do-animation-one')
-        doAnimationOne.addEventListener('click', () => {
-            animationOne.classList.remove('invisible')
-            animationOne.classList.add('animate-bot-to-bot')
-            setTimeout(() => {
-                animationOne.classList.remove('animate-bot-to-bot')
-                animationOne.classList.add('invisible')
-            }, "4000")
-        })
+      function doAnimationOne() {
+        const animationOne = document.getElementById("animation-one");
+        animationOne.classList.remove("invisible");
+        animationOne.classList.add("animate-bot-to-bot");
+        setTimeout(() => {
+          animationOne.classList.remove("animate-bot-to-bot");
+          animationOne.classList.add("invisible");
+        }, "4000");
+      }
     </script>
     <!-- Animation 2 JS -->
     <script>
-        const animationTwo = document.getElementById('animation-two')
-        const doAnimationTwo = document.getElementById('do-animation-two')
-        doAnimationTwo.addEventListener('click', () => {
-            animationTwo.classList.remove('invisible')
-            animationTwo.classList.add('animate-small-to-big')
-            setTimeout(() => {
-                animationTwo.classList.remove('animate-small-to-big')
-                animationTwo.classList.add('invisible')
-            }, "4000")
-        })
+      function doAnimationTwo() {
+        const animationTwo = document.getElementById("animation-two");
+        animationTwo.classList.remove("invisible");
+        animationTwo.classList.add("animate-small-to-big");
+        setTimeout(() => {
+          animationTwo.classList.remove("animate-small-to-big");
+          animationTwo.classList.add("invisible");
+        }, "4000");
+      }
     </script>
-</body>
+    <!-- Animation 3 CSS (couldn't do 3d CSS in tailwind) -->
+    <style>
+      @keyframes confetti-slow {
+        0% {
+          transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+        }
+        100% {
+          transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+        }
+      }
+      @keyframes confetti-medium {
+        0% {
+          transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+        }
+        100% {
+          transform: translate3d(100px, 105vh, 0) rotateX(100deg)
+            rotateY(360deg);
+        }
+      }
+      @keyframes confetti-fast {
+        0% {
+          transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+        }
+        100% {
+          transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+        }
+      }
+      .confetti-container {
+        perspective: 700px;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .confetti {
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        border-radius: 0;
+      }
+      .confetti--animation-slow {
+        animation: confetti-slow 2.25s linear 1 forwards;
+      }
+      .confetti--animation-medium {
+        animation: confetti-medium 1.75s linear 1 forwards;
+      }
+      .confetti--animation-fast {
+        animation: confetti-fast 1.25s linear 1 forwards;
+      }
+    </style>
+
+    <!-- Animation 3 JS -->
+    <script>
+      // Confetti JS
+      const Confettiful = function (el) {
+        this.el = el;
+        this.containerEl = null;
+        this.confettiFrequency = 3;
+        this.confettiColors = ["#fce18a", "#ff726d", "#b48def", "#f4306d"];
+        this.confettiAnimations = ["slow", "medium", "fast"];
+        this._setupElements();
+        this._renderConfetti();
+      };
+
+      Confettiful.prototype._setupElements = function () {
+        const containerEl = document.createElement("div");
+        const elPosition = this.el.style.position;
+        if (elPosition !== "relative" || elPosition !== "absolute") {
+          this.el.style.position = "relative";
+        }
+        containerEl.classList.add("confetti-container");
+        this.el.appendChild(containerEl);
+        this.containerEl = containerEl;
+      };
+
+      Confettiful.prototype._renderConfetti = function () {
+        this.confettiInterval = setInterval(() => {
+          const confettiEl = document.createElement("div");
+          const confettiSize = Math.floor(Math.random() * 3) + 7 + "px";
+          const confettiBackground =
+            this.confettiColors[
+              Math.floor(Math.random() * this.confettiColors.length)
+            ];
+          const confettiLeft =
+            Math.floor(Math.random() * this.el.offsetWidth) + "px";
+          const confettiAnimation =
+            this.confettiAnimations[
+              Math.floor(Math.random() * this.confettiAnimations.length)
+            ];
+          confettiEl.classList.add(
+            "confetti",
+            "confetti--animation-" + confettiAnimation
+          );
+          confettiEl.style.left = confettiLeft;
+          confettiEl.style.width = confettiSize;
+          confettiEl.style.height = confettiSize;
+          confettiEl.style.backgroundColor = confettiBackground;
+
+          confettiEl.removeTimeout = setTimeout(function () {
+            confettiEl.parentNode.removeChild(confettiEl);
+          }, 3000);
+          this.containerEl.appendChild(confettiEl);
+        }, 25);
+      };
+
+      // Animation 3 JS
+      function doAnimationThree() {
+        const mainContainer = document.getElementById("main-container");
+        mainContainer.classList.add("blur-sm");
+        const popupWin = document.getElementById("popup-win");
+        popupWin.classList.remove("hidden");
+        popupWin.classList.add("animate-top-to-bot");
+        window.confettiful = new Confettiful(document.body);
+
+        setTimeout(() => {
+          mainContainer.classList.remove("blur-sm");
+          popupWin.classList.add("hidden");
+          popupWin.classList.remove("animate-top-to-bot");
+          const confettiContainer = document.querySelector('.confetti-container')
+            document.body.removeChild(confettiContainer)
+        }, "6000");
+
+      }
+    </script>
+  </body>
 </html>
